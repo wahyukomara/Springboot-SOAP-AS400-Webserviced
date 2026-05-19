@@ -1,0 +1,117 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://wkom.com/soap"
+           targetNamespace="http://wkom.com/soap"
+           elementFormDefault="qualified">
+
+    <!-- Customer Data Structure -->
+    <xs:complexType name="CustomerData">
+        <xs:sequence>
+            <xs:element name="customerId" type="xs:string"/>
+            <xs:element name="customerName" type="xs:string" minOccurs="0"/>
+            <xs:element name="idType" type="xs:string" minOccurs="0"/>
+            <xs:element name="idNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="dateOfBirth" type="xs:string" minOccurs="0"/>
+            <xs:element name="gender" type="xs:string" minOccurs="0"/>
+            <xs:element name="nationality" type="xs:string" minOccurs="0"/>
+            <xs:element name="religion" type="xs:string" minOccurs="0"/>
+            <xs:element name="maritalStatus" type="xs:string" minOccurs="0"/>
+            <xs:element name="occupation" type="xs:string" minOccurs="0"/>
+            <xs:element name="address1" type="xs:string" minOccurs="0"/>
+            <xs:element name="address2" type="xs:string" minOccurs="0"/>
+            <xs:element name="city" type="xs:string" minOccurs="0"/>
+            <xs:element name="province" type="xs:string" minOccurs="0"/>
+            <xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="country" type="xs:string" minOccurs="0"/>
+            <xs:element name="phone" type="xs:string" minOccurs="0"/>
+            <xs:element name="mobile" type="xs:string" minOccurs="0"/>
+            <xs:element name="email" type="xs:string" minOccurs="0"/>
+            <xs:element name="customerType" type="xs:string" minOccurs="0"/>
+            <xs:element name="branchCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="openingDate" type="xs:string" minOccurs="0"/>
+            <xs:element name="creditLimit" type="xs:double"/>
+            <xs:element name="riskRating" type="xs:string" minOccurs="0"/>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- GET Customer Operation -->
+    <xs:element name="GetCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customerId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+                <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+                <xs:element name="customer" type="tns:CustomerData" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- CREATE Customer Operation -->
+    <xs:element name="CreateCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:CustomerData"/>
+                <xs:element name="user" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+                <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+                <xs:element name="customerId" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- UPDATE Customer Operation -->
+    <xs:element name="UpdateCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:CustomerData"/>
+                <xs:element name="user" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdateCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+                <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- DELETE Customer Operation -->
+    <xs:element name="DeleteCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customerId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="success" type="xs:boolean"/>
+                <xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+                <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

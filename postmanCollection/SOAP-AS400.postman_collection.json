@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "8482c7fd-7091-45ab-90c4-882fc135c3ad",
+    "name": "SOAP-AS400",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7943878",
+    "_collection_link": "https://go.postman.co/collection/7943878-8482c7fd-7091-45ab-90c4-882fc135c3ad?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Retieve Existing Customer",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://wkom.com/soap\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:UpdateCustomerRequest>\r\n         <soap:customer>\r\n            <soap:customerId>CIF0000001</soap:customerId>\r\n            <soap:customerName>Tony Stark (Iron Man)</soap:cu\r\n            <soap:idType>K</soap:idType>\r\n            <soap:idNumber>1234567890123456</soap:idNumber>\r\n            <soap:dateOfBirth>1970-05-29</soap:dateOfBirth>\r\n            <soap:gender>M</soap:gender>\r\n            <soap:nationality>USA</soap:nationality>\r\n            <soap:religion>C</soap:religion>\r\n            <soap:maritalStatus>M</soap:maritalStatus>\r\n            <soap:occupation>Avenger</soap:occupation>\r\n            <soap:address1>10880 Malibu Point</soap:address1>\r\n            <soap:address2>Suite 3000</soap:address2>\r\n            <soap:city>Malibu</soap:city>\r\n            <soap:province>California</soap:province>\r\n            <soap:postalCode>90265</soap:postalCode>\r\n            <soap:country>USA</soap:country>\r\n            <soap:phone>3105553000</soap:phone>\r\n            <soap:mobile>3109998888</soap:mobile>\r\n            <soap:email>tony@starkindustries.com</soap:email>\r\n            <soap:customerType>I</soap:customerType>\r\n            <soap:branchCode>0001</soap:branchCode>\r\n            <soap:openingDate>2026-05-19</soap:openingDate>\r\n            <soap:creditLimit>15000000.00</soap:creditLimit>\r\n            <soap:riskRating>M</soap:riskRating>\r\n            <soap:status>A</soap:status>\r\n         </soap:customer>\r\n         <soap:user>WKOM</soap:user>\r\n      </soap:UpdateCustomerRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/ws",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "ws"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Existing Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://wkom.com/soap\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <soap:UpdateCustomerRequest>\r\n            <soap:customer>\r\n                <soap:customerId>CUST990001</soap:customerId>\r\n                <soap:customerName>Tony Stark (Iron Man)\r\n                \r\n                </soap:customerName>\r\n                <soap:idType>K</soap:idType>\r\n                <soap:idNumber>1234567890123456</soap:idNumber>\r\n                <soap:dateOfBirth>1970-05-29</soap:dateOfBirth>\r\n                <soap:gender>M</soap:gender>\r\n                <soap:nationality>USA</soap:nationality>\r\n                <soap:religion>C</soap:religion>\r\n                <soap:maritalStatus>M</soap:maritalStatus>\r\n                <soap:occupation>Avenger</soap:occupation>\r\n                <soap:address1>10880 Malibu Point</soap:address1>\r\n                <soap:address2>Suite 3000</soap:address2>\r\n                <soap:city>Malibu</soap:city>\r\n                <soap:province>California</soap:province>\r\n                <soap:postalCode>90265</soap:postalCode>\r\n                <soap:country>USA</soap:country>\r\n                <soap:phone>3105553000</soap:phone>\r\n                <soap:mobile>3109998888</soap:mobile>\r\n                <soap:email>tony@starkindustries.com</soap:email>\r\n                <soap:customerType>I</soap:customerType>\r\n                <soap:branchCode>0001</soap:branchCode>\r\n                <soap:openingDate>2026-05-19</soap:openingDate>\r\n                <soap:creditLimit>15000000.00</soap:creditLimit>\r\n                <soap:riskRating>M</soap:riskRating>\r\n                <soap:status>A</soap:status>\r\n            </soap:customer>\r\n            <soap:user>WKOM</soap:user>\r\n        </soap:UpdateCustomerRequest>\r\n    </soapenv:Body>\r\n    </soapenv:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/ws",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "ws"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Update Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/xml",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/\r\nsoap/envelope/\" xmlns:soap=\"http://wkom.com/soap\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:GetCustomerRequest>\r\n         <soap:customerId>CUST990001</soap:customerId>\r\n      </soap:GetCustomerRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/ws",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "ws"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Customer",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Verify After Delete Operation",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
